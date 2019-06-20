@@ -15,7 +15,7 @@ class CreateRoverTable extends Migration
     {
         Schema::create('rover', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->ungignedBigInteger('grid_id');
+            $table->bigInteger('grid_id')->unsigned();
             $table->string('command');
             $table->foreign('grid_id')->references('id')->on('grid');
             $table->smallInteger('last_commandPos');
