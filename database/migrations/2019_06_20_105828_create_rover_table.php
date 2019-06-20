@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGridTable extends Migration
+class CreateRoverTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateGridTable extends Migration
      */
     public function up()
     {
-        Schema::create('grid', function (Blueprint $table) {
+        Schema::create('rover', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('width');
-            $table->unsignedInteger('height');
+            $table->integerBig('grid_id');
+            $table->string('command');
+            $table->foreign('grid_id')->references('id')->on('grid');
             $table->timestamps();
+
+            Schema::enableForeignKeyConstraints();
         });
     }
 
@@ -28,6 +31,6 @@ class CreateGridTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('grid');
+        Schema::dropIfExists('rover');
     }
 }
