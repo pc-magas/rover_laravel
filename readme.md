@@ -29,4 +29,7 @@ php artisan key:generate
 
 ## License
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
 Any other code is shipped with [WFPL licence](http://www.wtfpl.net).
+
+Each 3rd party library has its own licence.
