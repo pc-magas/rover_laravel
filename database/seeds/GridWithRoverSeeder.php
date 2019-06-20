@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Constants\RoverConstants;
 
 class GridWithRoverSeeder extends Seeder
 {
@@ -22,7 +23,10 @@ class GridWithRoverSeeder extends Seeder
             'id' => 1,
             'grid_id' => 2,
             'command' => "RRMRMMRM",
-            'last_command'=>""
+            'grid_pos_x' => 3,
+            'grid_pos_y' => 4,
+            'rotation' => RoverConstants::ORIENTATION_SOUTH,
+            'last_command' => ""
         ]);
     }
 }

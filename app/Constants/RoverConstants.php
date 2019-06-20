@@ -10,6 +10,13 @@ final class RoverConstants
     const ORIENTATION_EAST='E';
     const ORIENTATION_WEST='W';
     
+    const ORIENTATIONS=[
+        self::ORIENTATION_NORTH,
+        self::ORIENTATION_SOUTH,
+        self::ORIENTATION_EAST,
+        self::ORIENTATION_WEST
+    ];
+
     //Coordinate references
     const COORD_X='x';
     const COORD_Y='y';

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Strategy;
+namespace App\Strategies;
 
-class RoverStrategy
+class MoveRoverStrategy
 {
     public static function splitCommandSequence($command)
     {
