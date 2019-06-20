@@ -17,7 +17,6 @@ class CreateGridTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedInteger('width');
             $table->unsignedInteger('height');
-            $table->timestamps();
         });
     }
 

@@ -20,7 +20,6 @@ class CreateRoverTable extends Migration
             $table->foreign('grid_id')->references('id')->on('grid');
             $table->smallInteger('last_commandPos')->default(0);
             $table->string('last_command');
-            $table->timestamps();
 
             Schema::enableForeignKeyConstraints();
         });
