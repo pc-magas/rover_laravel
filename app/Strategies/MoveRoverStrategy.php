@@ -9,7 +9,7 @@ class RoverStrategy
 
     }
 
-    public statis function validateCommandSequence($commandSequence)
+    public static function validateCommandSequence($commandSequence)
     {
 
     }

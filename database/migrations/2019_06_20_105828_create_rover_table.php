@@ -18,7 +18,7 @@ class CreateRoverTable extends Migration
             $table->bigInteger('grid_id')->unsigned();
             $table->string('command');
             $table->foreign('grid_id')->references('id')->on('grid');
-            $table->smallInteger('last_commandPos');
+            $table->smallInteger('last_commandPos')->default(0);
             $table->string('last_command');
             $table->timestamps();
 
