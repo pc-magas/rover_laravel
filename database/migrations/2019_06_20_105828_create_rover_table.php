@@ -18,7 +18,7 @@ class CreateRoverTable extends Migration
             $table->bigInteger('grid_id')->unsigned();
             $table->string('command');
             $table->foreign('grid_id')->references('id')->on('grid');
-            $table->smallInteger('last_commandPos')->default(0);
+            $table->smallInteger('last_commandPos')->unsigned()->default(0);
             $table->smallInteger('grid_pos_x')->unsigned();
             $table->smallInteger('grid_pos_y')->unsigned();
             $table->enum('rotation', App\Constants\RoverConstants::ORIENTATIONS);
