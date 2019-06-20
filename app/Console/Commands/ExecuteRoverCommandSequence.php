@@ -12,7 +12,7 @@ class ExecuteRoverCommandSequence extends Command
      *
      * @var string
      */
-    protected $signature = 'rover:execute';
+    protected $signature = 'rover:execute {roverid}';
 
     /**
      * The console command description.
@@ -43,6 +43,6 @@ class ExecuteRoverCommandSequence extends Command
      */
     public function handle()
     {
-        //
+        //Do Stuff
     }
 }
