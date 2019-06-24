@@ -6,6 +6,8 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class RoverRepositoryTest extends TestCase
 {
+    use RefreshDatabase;
+
    /**
      * A basic test example.
      *

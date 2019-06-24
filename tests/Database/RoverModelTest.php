@@ -15,6 +15,7 @@ class RoverModelTest extends TestCase
 {
     /**
      * Generate a Rover with partial mocks needed for testing
+     * https://stackoverflow.com/a/56734842/4706711
      * @return Rover
      */
     private function genRoverForTesting(): Rover {
