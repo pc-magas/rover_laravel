@@ -13,6 +13,10 @@ define("GRID_SIZE",5);
 
 class RoverModelTest extends TestCase
 {
+    /**
+     * Generate a Rover with partial mocks needed for testing
+     * @return Rover
+     */
     private function genRoverForTesting(): Rover {
         $rover = $this->getMockBuilder(Rover::class)
                      ->setMethods(['grid'])
