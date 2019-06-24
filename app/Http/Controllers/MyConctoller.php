@@ -13,7 +13,7 @@ class MyController extends BaseController{
     private $roverStrategy = null;
 
     public function __construct(MoveRoverStrategy $roverStrategy){
-        this->roverStrategy=$roverStrategy;
+        $this->roverStrategy = $roverStrategy;
     }
 
     public function myCustomIndex() {
