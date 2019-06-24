@@ -3,11 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
-
-/**
- * Fields of the table are:
- * 
- */
+use App\Model\Grid;
 
 class Rover extends Model
 {
@@ -17,5 +13,18 @@ class Rover extends Model
      */
     protected $table='rover';
 
+    public function grid()
+    {
+        return $this->belongsTo(Grid::class);
+    }
 
+    public function setGridPosXValue($value)
+    {
+        
+    }
+
+    public function setGridPosYValue($value)
+    {
+
+    }
 }

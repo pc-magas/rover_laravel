@@ -2,6 +2,8 @@
 
 namespace App\Strategies;
 
+use App\Model\Rover;
+
 class MoveRoverStrategy
 {
     public static function splitCommandSequence($command)
