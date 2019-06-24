@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Routing\Controller as BaseController;
 use App\Strategies\MoveRoverStrategy;
 
-class MyController extends BaseController{
+class MyController extends BaseController {
 
     /**
      * @param MoveRoverStrategy
