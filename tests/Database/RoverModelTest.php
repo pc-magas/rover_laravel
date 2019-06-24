@@ -60,7 +60,7 @@ class RoverModelTest extends TestCase
         }
     }
 
-    // For X value
+    // Testing the setter for the `grid_pos_x` column
     public function testSetGridPosXValueThrowsExceptionWhenNegative(): void {
         $this->setGridPosValueThrowsExceptionInvalidValueTest(TEST_ROVER_MAX_GRID_SIZE_VAL);
     }
@@ -73,7 +73,8 @@ class RoverModelTest extends TestCase
         $this->setGridPosValueValidValueTest(TEST_ROVEL_SUCCESS_VAL);
     }
 
-    // For Y value
+
+    // Testing the setter for the `grid_pos_y` column
     public function testSetGridPosYValueThrowsExceptionWhenNegative(): void {
         $this->setGridPosValueThrowsExceptionInvalidValueTest(TEST_ROVER_MAX_GRID_SIZE_VAL,true);
     }
@@ -85,4 +86,6 @@ class RoverModelTest extends TestCase
     public function testSetGridPosYValueThorwsExceptionOnNormal(): void {
         $this->setGridPosValueValidValueTest(TEST_ROVEL_SUCCESS_VAL,true);
     }
+
+    // Other tests
 }
