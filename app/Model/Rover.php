@@ -35,5 +35,7 @@ class Rover extends Model
         if($value < 0 || $value > $height){
             throw new \InvalidArgumentException("Y is out of grid bounds");
         }
+
+
     }
 }
