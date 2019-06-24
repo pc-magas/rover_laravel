@@ -8,11 +8,12 @@ use App\Model\Grid;
 
 define("TEST_ROVEL_SUCCESS_VAL",3);
 define("TEST_ROVEL_NEGATIVE_VAL",-1);
+define("TEST_ROVER_MAX_GRID_SIZE_VAL",6);
 define("GRID_SIZE",5);
 
 class RoverModelTest extends TestCase
 {
-    private function genRoverForTesting(){
+    private function genRoverForTesting(): Rover {
         $rover = $this->getMockBuilder(Rover::class)
                      ->setMethods(['grid'])
                      ->getMock();
@@ -24,18 +25,23 @@ class RoverModelTest extends TestCase
         return $rover;
     }
 
-    public function testSetGridPosXValueThrowsExceptionWhenNegative(){
-        $this->markTestSkipped('To be implemented');
-    }
-
-    public function testSetGridPosXValueThrowsExceptionWhenOverWidth(){
+    private function SetGridPosXValueThrowsExceptionInvalidValueTest($value): void{
         $rover = $this->genRoverForTesting();
         $this->expectException(\InvalidArgumentException::class);
-        $rover->setGridPosXValue(TEST_ROVEL_NEGATIVE_VAL);
-
+        $rover->setGridPosXValue($value);
     }
 
-    public function testSetGridPosXValueThorwsExceptionOnNormal(){
+    public function testSetGridPosXValueThrowsExceptionWhenNegative(): void {
+        $this->SetGridPosXValueThrowsExceptionInvalidValueTest(TEST_ROVER_MAX_GRID_SIZE_VAL);
+    }
+
+
+
+    public function testSetGridPosXValueThrowsExceptionWhenOverWidth(): void {
+        $this->SetGridPosXValueThrowsExceptionInvalidValueTest(TEST_ROVEL_NEGATIVE_VAL);
+    }
+
+    public function testSetGridPosXValueThorwsExceptionOnNormal(): void {
         $rover = $this->genRoverForTesting();
         try {
             $rover->setGridPosXValue(TEST_ROVEL_SUCCESS_VAL);
