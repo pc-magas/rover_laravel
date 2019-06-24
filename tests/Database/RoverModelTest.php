@@ -1,11 +1,14 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Database;
 
 use Tests\TestCase;
 use App\Model\Rover;
 use App\Model\Grid;
-use Mockery;
+
+define("TEST_ROVEL_SUCCESS_VAL",3);
+define("TEST_ROVEL_NEGATIVE_VAL",-1);
+
 
 class RoverModelTest extends TestCase
 {
@@ -14,7 +17,15 @@ class RoverModelTest extends TestCase
     }
 
     public function testSetGridPosXValueThrowsExceptionWhenOverWidth(){
-        $this->markTestSkipped('To be implemented');
+        $rover = new Rover();
+        $grid = new Grid();
+        $grid->width=5;
+        $grid->height=5;
+        $rover->grid=$grid;
+
+        $this->expectException(\InvalidArgumentException::class);
+        $rover->setGridPosXValue(TEST_ROVEL_NEGATIVE_VAL);
+
     }
 
     public function testSetGridPosXValueThorwsExceptionOnNormal(){
@@ -26,10 +37,10 @@ class RoverModelTest extends TestCase
 
         $rover->grid=$grid;
         try {
-            $rover->setGridPosXValue(3);
-            $this->assertTrue(true);
+            $rover->setGridPosXValue(TEST_ROVEL_SUCCESS_VAL);
+            $this->assertEquals($rover->x,TEST_ROVEL_SUCCESS_VAL);
         } catch(\Exception $e) {
-            $this->assertFalse(false);
+            $this->fail("No exception should be thrown when setting a correct value.");
         }
     }
 }

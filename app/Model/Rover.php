@@ -20,11 +20,13 @@ class Rover extends Model
 
     public function setGridPosXValue($value)
     {
-        $Grid = $this->grid()->first();
+        $Grid = $this->grid->first();
         $width = $Grid->width;
         if($value < 0 || $value > $width){
             throw new \InvalidArgumentException("X is out of grid bounds");
         }
+
+        $this->attributes['grid_pos_x']=$value;
     }
 
     public function setGridPosYValue($value)
@@ -36,6 +38,6 @@ class Rover extends Model
             throw new \InvalidArgumentException("Y is out of grid bounds");
         }
 
-
+        $this->attributes['grid_pos_y']=$value;
     }
 }
