@@ -89,7 +89,6 @@ $settings = [
             'prefix' => '',
             'prefix_indexes' => true,
         ],
-
     ],
 
     /*

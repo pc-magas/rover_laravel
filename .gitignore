@@ -11,3 +11,4 @@ npm-debug.log
 yarn-error.log
 docker/misc_volumes/
 .laravel.env
+.env.testing
