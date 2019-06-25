@@ -2,11 +2,18 @@
 namespace App\Repositories;
 
 use NilPortugues\Foundation\Infrastructure\Model\Repository\Eloquent\EloquentRepository;
+use NilPortugues\Foundation\Domain\Model\Repository\Contracts\Identity;
+use NilPortugues\Foundation\Domain\Model\Repository\Contracts\Fields;
+use NilPortugues\Foundation\Domain\Model\Repository\Contracts\Sort;
+use NilPortugues\Foundation\Domain\Model\Repository\Contracts\Pageable;
+use NilPortugues\Foundation\Domain\Model\Repository\Contracts\Filter;
+use NilPortugues\Foundation\Domain\Model\Repository\Page;
+
 use App\Model\Rover;
+
 
 class RoverRepository extends EloquentRepository
 {
-
     /**
      * {@inheritdoc}
      */
