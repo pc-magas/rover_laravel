@@ -19,6 +19,14 @@ class GridWithRoverSeeder extends Seeder
             'height' => 10,
         ]);
 
+        $roverCommand=implode("",[ RoverConstants::COMMAND_ROT_LEFT,
+            RoverConstants::COMMAND_MOVE,
+            RoverConstants::COMMAND_ROT_LEFT,
+            RoverConstants::COMMAND_ROT_LEFT,
+            RoverConstants::COMMAND_MOVE,
+            RoverConstants::COMMAND_ROT_RIGHT,
+        ]);
+
         DB::table('rover')->insert([
             'id' => 1,
             'grid_id' => 2,

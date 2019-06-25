@@ -27,12 +27,7 @@ $factory->define(Rover::class, function(Faker $faker) {
     $commandLength = strlen($command);
     $commandPos = rand(0,$commandLength);
     $lastExecutedCommand = substr($command,$commandPos,$commandPos);
-
-    $randomGrid=Grid::inRandomOrder();
-
-    if(empty($randomGrid)){
-        $randomGrid = factory(Grid::class)->create();
-    }
+    $randomGrid = factory(Grid::class)->create();
 
     return [
         'grid_id' => $randomGrid->value('id'),

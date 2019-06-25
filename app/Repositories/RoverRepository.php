@@ -6,15 +6,6 @@ use App\Model\Rover;
 
 class RoverRepository extends EloquentRepository
 {
-    protected $userAdapter;
-
-    /**
-     * @param $userAdapter
-     */
-    public function __construct($userAdapter)
-    {
-        $this->userAdapter = $userAdapter;
-    }
 
     /**
      * {@inheritdoc}
@@ -31,7 +22,7 @@ class RoverRepository extends EloquentRepository
     {
         $eloquentModel = parent::find($id, $fields);
 
-        return $this->userAdapter->fromEloquent($eloquentModel);
+        return $eloquentModel->toArray();
     }
 
     /**
@@ -73,7 +64,7 @@ class RoverRepository extends EloquentRepository
             //This is required to handle findAll returning array, not objects.
             $eloquentModel = (object) $eloquentModel;
 
-            $results[] = $this->userAdapter->fromEloquent($eloquentModel);
+            $results[] = $eloquentModel->attributesToArray();
         }
 
         return $results;
