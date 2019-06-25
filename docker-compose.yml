@@ -5,7 +5,7 @@ services:
     volumes:
       - ".:/var/www/html"
       - "./.laravel.env:/var/www/html/.env"
-    links: 
+    links:
       - memcache
     environment:
       DB_CONNECTION: pgsql
@@ -24,7 +24,7 @@ services:
     volumes:
       - ".:/var/www/html"
       - "./docker/nginx.conf:/etc/nginx/nginx.conf:ro"
-    
+
 
   postgresql:
     image: postgres:alpine
