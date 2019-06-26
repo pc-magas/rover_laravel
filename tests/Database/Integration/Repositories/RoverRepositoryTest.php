@@ -28,8 +28,8 @@ class RoverRepositoryTest extends TestCase
          * @var Page
          */
         $data = $repository->findAll();
-
-        var_dump($data->elements);
+        var_dump(get_class_methods(Page::class));
+        var_dump($data->fields());
         $this->assertTrue(true);
     }
 }
