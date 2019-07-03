@@ -23,14 +23,14 @@ $factory->define(Grid::class,function(Faker $faker){
 });
 
 $factory->define(Rover::class, function(Faker $faker) {
-    $command = generateRandomCommand(rand(0));
+    $command = generateRandomCommand($faker->randomDigitNotNull);
     $commandLength = strlen($command);
     $commandPos = rand(0,$commandLength);
     $lastExecutedCommand = substr($command,$commandPos,$commandPos);
-    $randomGrid = factory(Grid::class)->create();
 
+    $randomGrid = factory(Grid::class)->create();
     return [
-        'grid_id' => $randomGrid->value('id'),
+        'grid_id' => $randomGrid->id,
         'grid_pos_x' => rand(0,$randomGrid->value('width')),
         'grid_pos_y' => rand(0,$randomGrid->value('height')),
         'rotation' => RoverConstants::ORIENTATION_EAST,
