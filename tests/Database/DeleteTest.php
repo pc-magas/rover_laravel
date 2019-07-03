@@ -2,11 +2,17 @@
 
 namespace Tests\Database;
 use Tests\TestCase;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+
 use App\Model\Rover;
 use App\Model\Grid;
 
 class DeleteTest extends TestCase
 {
+    use RefreshDatabase;
+
     public function testDeletion()
     {
         $grid=factory(Grid::class)->create();

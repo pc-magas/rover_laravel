@@ -12,6 +12,8 @@ class Grid extends Model
      */
     protected $table='grid';
 
+    public $timestamps = false;
+
     public function rovers()
     {
         return $this->hasMany(Rover::class);

@@ -13,6 +13,9 @@ class Rover extends Model
      */
     protected $table='rover';
 
+    public $timestamps = false;
+
+
     public function grid()
     {
         return $this->belongsTo(Grid::class);
